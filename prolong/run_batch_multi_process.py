@@ -48,7 +48,6 @@ class DataProcessor:
             trust_remote_code=True,
             device_map="auto"
         )
-        # self.model.to(device)
 
         self.tokenizer = AutoTokenizer.from_pretrained(
             model_name,
@@ -120,7 +119,8 @@ class DataProcessor:
                 if dlt_ppl[i][j] > self.dlt_ppl_threshold:
                     distance_gain = np.clip((i - j) * dis_scale, 0, 1)
                     lds += (dlt_ppl[i][j] + distance_gain) * dependency_entropy[i]
-
+        if np.isnan(lds):
+            lds = 0.
         return lds, dlt_ppl, dependency_entropy
 
     def compute_single_ppl(self, data_list, batch_size):
@@ -224,15 +224,12 @@ class DataProcessor:
                 try:
                     data_list = self.construct_data(data, self.tokenizer, self.chunk_size, chunk_num)
                     start = time.time()
-
                     single_ppl = self.compute_single_ppl(data_list, self.single_ppl_batch_size)
-
                     pair_ppl = self.compute_pair_ppl(data_list, self.pair_ppl_batch_size, self.sample_size)
-                    
                     long_dependency_score, dlt_ppl, dependency_entropy = self.compute_lds(single_ppl=single_ppl, pair_ppl=pair_ppl)
                 except Exception as e:
                     print (f'[Error]: {e}, [file_name]: {input_file}, [idx]: {idx}, set LDS to 0.')
-                    long_dependency_score = 0
+                    long_dependency_score = 0.
                 end = time.time()
 
                 # draw
