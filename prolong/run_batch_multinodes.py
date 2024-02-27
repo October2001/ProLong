@@ -75,7 +75,6 @@ def get_cmd(args, filename, output_dir):
 def main():
     args = get_arguments()
     ip_list = get_ips(args.ip_hostfile)
-    # filenames = os.listdir(args.input_dir)
     filenames = get_files(args.file_list)
 
     # get basename of filenames

@@ -119,7 +119,6 @@ class DataProcessor:
                 dlt_ppl[i][j] /= single_ppl[i]
                 if dlt_ppl[i][j] > self.dlt_ppl_threshold:
                     distance_gain = np.clip((i - j) * dis_scale, 0, 1)
-                    # lds += (dlt_ppl[i][j] + distance_gain + dependency_entropy[i])
                     lds += (dlt_ppl[i][j] + distance_gain) * dependency_entropy[i]
 
         return lds, dlt_ppl, dependency_entropy
@@ -134,7 +133,7 @@ class DataProcessor:
                 inputs = torch.tensor(batch).to(self.device)
                 labels = inputs.clone()
                 logits = self.model(input_ids=inputs)[0]
-                batch_ppl = self.compute_ppl(logits, labels, nums)  # compute_ppl now operates on batches
+                batch_ppl = self.compute_ppl(logits, labels, nums)
                 single_ppl[i:i+batch_size] = batch_ppl
         return single_ppl
     
@@ -155,7 +154,7 @@ class DataProcessor:
                 inputs = torch.tensor(inputs).to(self.device)
                 labels = torch.tensor([[IGNORE_INDEX] * (len(data_list[j]) + 1) + data_list[i][1:] for i, j in batch_pairs]).to(self.device)
                 logits = self.model(input_ids=inputs)[0]
-                batch_ppl = self.compute_ppl(logits, labels, nums)  # compute_ppl now operates on batches
+                batch_ppl = self.compute_ppl(logits, labels, nums)
                 for k, (i, j) in enumerate(batch_pairs):
                     pair_ppl[i][j] = batch_ppl[k]
         return pair_ppl
@@ -234,9 +233,7 @@ class DataProcessor:
                 except Exception as e:
                     print (f'[Error]: {e}, [file_name]: {input_file}, [idx]: {idx}, set LDS to 0.')
                     long_dependency_score = 0
-                # print(f'long_dependency_score: {long_dependency_score}')
                 end = time.time()
-                # print(f'cost time: {end - start} seconds')
 
                 # draw
                 if self.need_draw:

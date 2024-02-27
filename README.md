@@ -45,6 +45,13 @@ bash scripts/run_multiprocess.sh
 bash scripts/run_multinodes.sh
 ```
 
+## Key parameters
+* `chunk_size` - The chunk size to be used for processing the data, here we use 128
+* `window_size` - The maximum window size to be considered, here we use 32768
+* `dlt_ppl_threshold` - The threshold to be used for filter delta perplexity, here we use 0.1
+* `single_ppl_batch_size` - The batch size to be used for calculating single perplexity
+* `pair_ppl_batch_size` - The batch size to be used for calculating pair perplexity
+* `sample_size` - The sample size to be used when calculating pair perplexity, if sample size is set to -1, then sampling strategy will not be used, all pairs will be calculated
 
 ## Citation
 

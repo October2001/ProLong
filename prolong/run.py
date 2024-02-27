@@ -93,7 +93,7 @@ def compute_single_ppl(data_list, batch_size):
             inputs = torch.tensor(batch).to(device)
             labels = inputs.clone()
             logits = model(input_ids=inputs)[0]
-            batch_ppl = compute_ppl(logits, labels, nums)  # compute_ppl now operates on batches
+            batch_ppl = compute_ppl(logits, labels, nums)
             single_ppl[i:i+batch_size] = batch_ppl
     return single_ppl
 
@@ -114,7 +114,7 @@ def compute_pair_ppl(data_list, batch_size, sample_size=-1):
             inputs = torch.tensor(inputs).to(device)
             labels = torch.tensor([[IGNORE_INDEX] * (len(data_list[j]) + 1) + data_list[i][1:] for i, j in batch_pairs]).to(device)
             logits = model(input_ids=inputs)[0]
-            batch_ppl = compute_ppl(logits, labels, nums)  # compute_ppl now operates on batches
+            batch_ppl = compute_ppl(logits, labels, nums)
             for k, (i, j) in enumerate(batch_pairs):
                 pair_ppl[i][j] = batch_ppl[k]
     return pair_ppl
@@ -161,7 +161,6 @@ def compute_lds(single_ppl, pair_ppl):
             dlt_ppl[i][j] /= single_ppl[i]
             if dlt_ppl[i][j] > args.dlt_ppl_threshold:
                 distance_gain = np.clip((i - j) * dis_scale, 0, 1)
-                # lds += (dlt_ppl[i][j] + distance_gain + dependency_entropy[i])
                 lds += (dlt_ppl[i][j] + distance_gain) * dependency_entropy[i]
 
     return lds, dlt_ppl, dependency_entropy
