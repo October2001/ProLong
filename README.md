@@ -59,3 +59,8 @@ If you find this repository helpful, please consider citing the following paper:
 
 ```
 ```
+
+## Contact
+<!-- email -->
+
+If you have any questions, feel free to contact us at `chenlongze23@mails.ucas.ac.cn` or `liuziqiang22@mails.ucas.ac.cn`.
