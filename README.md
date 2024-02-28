@@ -14,6 +14,7 @@ transformers==4.36.0
 tqdm==4.66.1
 numpy==1.22.2
 matplotlib==3.8.0
+datasets==2.15.0
 ```
 
 Install the required packages

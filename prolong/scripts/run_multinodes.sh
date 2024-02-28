@@ -2,9 +2,9 @@
 set -ux
 
 INPUT_DIR=<YOUR_INPUT_DIR>
-FILE_LIST=filelist # this will combine with input dir to get the full path of each file, eg. <YOUR_INPUT_DIR>/file0.jsonl
+FILE_LIST=scripts/filelist # this will combine with input dir to get the full path of each file, eg. <YOUR_INPUT_DIR>/file0.jsonl
 OUTPUT_DIR=<YOUR_OUTPUT_DIR>
-IP_HOSTFILE=iphost
+IP_HOSTFILE=scripts/iphost
 MODEL_PATH=<YOUR_MODEL_PATH>
 SAMPLE_SIZE=500
 CHUNK_SIZE=128
