@@ -16,6 +16,16 @@ def sort_scores(in_filename, out_filename):
 
 
 def get_dataset(dataset_path, index_path, output_path):
+    '''
+    dataset_path: str, the jsonl path of the dataset
+        e.g. {'text': 'This is a sentence.'}
+             {'text': 'This is another sentence.'}
+    index_path: str, the jsonl path of the index file
+        e.g. {'Index': 1, 'Score': 1.5}
+             {'Index': 0, 'Score': 0.8}
+    output_path: str, the jsonl path of the output file
+        e.g. {'text': 'This is another sentence.'}
+    '''
     dataset = load_dataset('text', data_files=dataset_path)
     with open(index_path, 'r', encoding='utf-8') as i:
         idx_data = i.readlines()
@@ -28,5 +38,3 @@ def get_dataset(dataset_path, index_path, output_path):
         for row in new_dataset:
             text = row['text']
             f.write(text + '\n')
-
-get_dataset('data.jsonl', 'score.jsonl', 'new_data.jsonl')
