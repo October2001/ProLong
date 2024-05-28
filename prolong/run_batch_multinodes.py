@@ -93,6 +93,14 @@ def main():
     for idx, filename in enumerate(filenames):
         ip = ip_list[idx]
         input_path = os.path.join(args.input_dir, filename)
+        # get input path lines number
+        with open(input_path, 'r', encoding='utf-8') as fin:
+            total_lines = sum(1 for _ in fin)
+            fin.seek(0)
+        if total_lines < 8:
+            print(f"[Warning]: current gpu_ids: {args.gpu_ids}")
+            args.gpu_ids = args.gpu_ids[:total_lines]
+            print(f"[Warning]: {input_path} has less than 8 lines, change gpu_ids to {args.gpu_ids}")
         cmd = get_cmd(args, input_path, output_path_list[idx])
         
         meta_cmd = 'pdsh -R ssh -w {} {} &'.format(ip, cmd)

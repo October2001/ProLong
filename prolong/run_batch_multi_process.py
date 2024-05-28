@@ -46,8 +46,8 @@ class DataProcessor:
             torch_dtype=torch.float16,
             use_flash_attention_2=use_flash_attention_2,
             trust_remote_code=True,
-            device_map="auto"
         )
+        self.model.to(device)
 
         self.tokenizer = AutoTokenizer.from_pretrained(
             model_name,
