@@ -1,6 +1,6 @@
 # ProLong
 
-This repository contains code for the paper "**Long Context is Not Long at All: A Prospector of Long-Dependency Data for Large Language Models**".
+This repository contains code for the paper "**[Long Context is Not Long at All: A Prospector of Long-Dependency Data for Large Language Models](https://arxiv.org/abs/2405.17915)**".
 
 ## Abstract
 
@@ -59,6 +59,12 @@ bash scripts/run_multinodes.sh
 If you find this repository helpful, please consider citing the following paper:
 
 ```
+@article{chen2024prolong,
+  title={Long Context is Not Long at All: A Prospector of Long-Dependency Data for Large Language Models},
+  author={Chen, Longze and Liu, Ziqiang and He, Wanwei and Li, Yunshui and Luo, Run and Yang, Min},
+  journal={arXiv preprint arXiv:2405.17915},
+  year={2024}
+}
 ```
 
 ## Contact
