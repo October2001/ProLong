@@ -55,7 +55,7 @@ bash scripts/run_multinodes.sh
 * `sample_size` - The sample size to be used when calculating pair perplexity, if sample size is set to -1, then sampling strategy will not be used, all pairs will be calculated
 
 ## ProLong Test Set
-**The toy test set constructed in the paper is relatively small. Subsequently, we will release a larger and more diverse ProLong Test Set to assist users in hyperparameter selection based on their experimental setups.**
+* The toy test set constructed in the paper is relatively small. Subsequently, we will release a larger ProLong test set with a broader source to assist users in selecting hyperparameters based on their experimental settings.
 
 ## Citation
 
