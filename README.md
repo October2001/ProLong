@@ -68,6 +68,21 @@ If you find this repository helpful, please consider citing the following paper:
   journal={arXiv preprint arXiv:2405.17915},
   year={2024}
 }
+@inproceedings{chen-etal-2024-prolong,
+    title = "Long Context is Not Long at All: A Prospector of Long-Dependency Data for Large Language Models",
+    author = "Chen, Longze  and
+      Liu, Ziqiang  and
+      He, Wanwei  and
+      Zheng, Yinhe  and
+      Li, Yunshui  and
+      Luo, Run  and
+      Yang, Min",
+    booktitle = "Proceedings of the 62st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    month = August,
+    year = "2024",
+    address = "Bangkok, Thailand",
+    publisher = "Association for Computational Linguistics",
+}
 ```
 
 ## Contact
