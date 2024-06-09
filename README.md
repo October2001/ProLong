@@ -72,7 +72,7 @@ If you find this repository helpful, please consider citing the following paper:
       Luo, Run  and
       Yang, Min",
     booktitle = "Proceedings of the 62st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
-    month = August,
+    month = aug,
     year = "2024",
     address = "Bangkok, Thailand",
     publisher = "Association for Computational Linguistics",
