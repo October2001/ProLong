@@ -1,6 +1,6 @@
 # ProLong
 
-This repository contains code for the paper "**[Long Context is Not Long at All: A Prospector of Long-Dependency Data for Large Language Models](https://arxiv.org/abs/2405.17915)**".
+This repository contains code for the **ACL'2024** paper "**[Long Context is Not Long at All: A Prospector of Long-Dependency Data for Large Language Models](https://arxiv.org/abs/2405.17915)**".
 
 ## Abstract
 
@@ -61,25 +61,16 @@ bash scripts/run_multinodes.sh
 
 If you find this repository helpful, please consider citing the following paper:
 
-```
-@inproceedings{chen-etal-2024-prolong,
-    title = "Long Context is Not Long at All: A Prospector of Long-Dependency Data for Large Language Models",
-    author = "Chen, Longze  and
-      Liu, Ziqiang  and
-      He, Wanwei  and
-      Zheng, Yinhe  and
-      Li, Yunshui  and
-      Luo, Run  and
-      Yang, Min",
-    booktitle = "Proceedings of the 62st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
-    month = aug,
-    year = "2024",
-    address = "Bangkok, Thailand",
-    publisher = "Association for Computational Linguistics",
+```bib
+@article{chen2024long,
+  title={Long Context is Not Long at All: A Prospector of Long-Dependency Data for Large Language Models},
+  author={Chen, Longze and Liu, Ziqiang and He, Wanwei and Li, Yunshui and Luo, Run and Yang, Min},
+  journal={arXiv preprint arXiv:2405.17915},
+  year={2024}
 }
 ```
 
 ## Contact
 <!-- email -->
 
-If you have any questions, feel free to contact us at `lz.chen2@siat.ac.cn` or `zq.liu4@siat.ac.cn`.
+If you have any questions, feel free to contact us at `lz.chen2@siat.ac.cn` or `ww.he@siat.ac.cn`.
