@@ -1,6 +1,6 @@
 # ProLong
 
-This repository contains code for the **ACL'2024** paper "**[Long Context is Not Long at All: A Prospector of Long-Dependency Data for Large Language Models](https://arxiv.org/abs/2405.17915)**".
+This repository contains code for the **ACL'2024 Oral** paper "**[Long Context is Not Long at All: A Prospector of Long-Dependency Data for Large Language Models](https://arxiv.org/abs/2405.17915)**".
 
 ## Abstract
 
